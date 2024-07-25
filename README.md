@@ -6,8 +6,8 @@ This repository contains two MATLAB scripts for analyzing spectroscopic and imag
 
 ## Scripts
 
-1. `spectroscopic_analysis.m`: Analyzes spectroscopic data from Excel files.
-2. `image_analysis.m`: Processes and analyzes a series of images, extracting intensity profiles and performing linear fits.
+1. `processSheet_code.m`: Analyzes spectroscopic data from Excel files.
+2. `image_fluorescence.m`: Processes and analyzes a series of images, extracting intensity profiles and performing linear fits.
 
 ## Spectroscopic Analysis Script
 
