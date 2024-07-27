@@ -1,14 +1,13 @@
-# MATLAB Data Analysis Scripts
+# MATLAB and Python Data Analysis Scripts
 
-This repository contains two MATLAB scripts for analyzing spectroscopic and image data. These scripts are designed for processing and visualizing experimental results in materials science or chemistry research.
+This repository contains MATLAB scripts for analyzing spectroscopic and image data, as well as a Python script for fitting polariton data. These scripts are designed for processing and visualizing experimental results in materials science or chemistry research.
 
 ## Scripts
-
 1. `spectroscopic_analysis.m`: Analyzes spectroscopic data from Excel files.
 2. `image_analysis.m`: Processes and analyzes a series of images, extracting intensity profiles and performing linear fits.
+3. `part_c_fits.py`: Analyzes and fits upper and lower polariton data.
 
 ## Spectroscopic Analysis Script
-
 ### Features:
 - Reads data from multiple sheets in an Excel file
 - Processes spectroscopic data for different concentrations
@@ -23,7 +22,6 @@ This repository contains two MATLAB scripts for analyzing spectroscopic and imag
 3. Run the script in MATLAB.
 
 ## Image Analysis Script
-
 ### Features:
 - Processes a series of images (Fe1.jpeg to Fe10.jpeg)
 - Allows user to select a line of interest on each image
@@ -43,25 +41,57 @@ This repository contains two MATLAB scripts for analyzing spectroscopic and imag
    - Enter the width (in pixels) for averaging intensity.
 4. The script will generate and save multiple plots for each image.
 
-## Requirements
+## Polariton Fitting Script
+### Features:
+- Reads upper and lower polariton data from an Excel file
+- Defines and fits upper and lower polariton functions using least squares optimization
+- Calculates parameter errors and R-squared values for goodness of fit
+- Generates plots for both upper and lower polariton data, including:
+  - Data points with error bars
+  - Fitted curves
+  - Residual plots
 
+### Usage:
+1. Ensure you have the required Python libraries installed: numpy, pandas, scipy, matplotlib
+2. Place your data in an Excel file named 'data_partc_with_errors.xlsx' with sheets 'Upper Values' and 'Lower Values'
+3. Run the script in a Python environment
+
+### Key Components:
+- Polariton Functions: Defines mathematical models for upper and lower polaritons
+- Least Squares Fitting: Uses scipy's `least_squares` function for curve fitting
+- Data Visualization: Creates separate plots for upper and lower polariton data and residuals
+- Error Analysis: Calculates parameter errors and R-squared values
+
+### Output:
+- Fitted parameters with error estimates for both upper and lower polariton curves
+- R-squared values and final cost of the fit
+- Four plots: 
+  1. Upper Polariton: Energy vs. Wave Number k
+  2. Residuals of the Upper Polariton Fit
+  3. Lower Polariton: Energy vs. Wave Number k
+  4. Residuals of the Lower Polariton Fit
+
+### Notes:
+- The script uses initial guess parameters that may need to be adjusted for different datasets
+- Error handling is included for potential singular matrix issues in parameter error calculation
+- The script assumes specific column names in the Excel file; adjust as necessary for your data format
+
+## Requirements
 - MATLAB (version R2019b or later recommended)
 - Image Processing Toolbox
 - Statistics and Machine Learning Toolbox
+- Python 3.x
+- Python libraries: numpy, pandas, scipy, matplotlib
 
 ## Output
-
-Both scripts generate multiple figures and save them as PNG files in the current directory. The spectroscopic analysis script also outputs results to the MATLAB console.
+Both MATLAB scripts generate multiple figures and save them as PNG files in the current directory. The spectroscopic analysis script also outputs results to the MATLAB console. The Python script generates plots and outputs fitted parameters and statistical information to the console.
 
 ## Notes
-
 - These scripts are designed for specific experimental setups and may need modifications to work with different data formats or experimental conditions.
 - Ensure you have the necessary permissions to read/write files in the directory where you're running these scripts.
 
 ## Contributing
-
 Feel free to fork this repository and submit pull requests with improvements or bug fixes. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-
 [MIT License](https://choosealicense.com/licenses/mit/)
